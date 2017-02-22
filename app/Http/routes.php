@@ -14,3 +14,24 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+
+Route::group(['middleware' => 'web'], function () {
+    Route::auth();
+    Route::get('/home', 'HomeController@index');
+   
+   
+   
+    });
+
+
+Route::group(['middleware' => ['web', 'auth']], function () {
+    Route::group(['namespace' => 'admin', 'prefix' => 'admin'], function () {
+    	Route::get('/pruebas', function () {
+        	return "prueba laravel";
+    	});
+
+    	
+    });
+});
