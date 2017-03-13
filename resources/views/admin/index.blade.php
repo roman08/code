@@ -9,8 +9,9 @@
 <body>
 	<div class="row container">
 		<div class="form-group col-md-6">
-    		{{Form::label('name','Nombre')}}
-    		{{Form::text('name', null ,['class'=>'form-control','placeholder'=>'nombre alternativo del producto', 'autocomplete'=>'off'])}}
+		{!! $var !!}
+    		{!! Form::label('name','Nombre') !!}
+    		{!! Form::text('name', $var  ,['class'=>'form-control','placeholder'=>'nombre alternativo del producto', 'autocomplete'=>'off']) !!}
 		</div>
 	</div>
 </body>

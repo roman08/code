@@ -15,7 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('/index', 'indexController');
 
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
@@ -31,6 +30,8 @@ Route::group(['middleware' => ['web', 'auth']], function () {
     	Route::get('/pruebas', function () {
         	return "prueba laravel";
     	});
+
+        Route::resource('/index', 'indexController');
 
     	
     });
