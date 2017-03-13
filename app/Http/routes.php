@@ -15,9 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/index', function(){
-    return "Hola proyecto";
-});
+Route::resource('/index', 'indexController');
 
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
